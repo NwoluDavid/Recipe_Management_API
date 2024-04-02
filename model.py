@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 
 class NutritionalInfo(BaseModel):
-    calories: int
+    calories: float
     fat: float
     protein: float
 
