@@ -85,69 +85,62 @@ curl -X DELETE http://localhost:8000/recipes/New%20Recipe
 ### Pytest Report
 
 ```
-pytest test_main.py
-================================================================= test session starts =================================================================
-platform linux -- Python 3.12.1, pytest-8.1.1, pluggy-1.4.0
-rootdir: /home/david/Recipe_Management
-configfile: pyproject.toml
-plugins: cov-5.0.0, anyio-4.3.0
-collected 8 items                                                                                                                                     
+    pytest test_main.py
+    ================================================================= test session starts =================================================================
+    platform linux -- Python 3.12.1, pytest-8.1.1, pluggy-1.4.0
+    rootdir: /home/david/Recipe_Management
+    configfile: pyproject.toml
+    plugins: cov-5.0.0, anyio-4.3.0
+    collected 8 items                                                                                                                                     
 
-test_main.py ........                                                                                                                           [100%]
+    test_main.py ........                                                                                                                           [100%]
 
-================================================================== warnings summary ===================================================================
-.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:272
-  /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:272: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.6/migration/
-    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+    ================================================================== warnings summary ===================================================================
+    .venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:272
+    /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:272: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.6/migration/
+        warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
 
-.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:322
-  /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
-  * 'orm_mode' has been renamed to 'from_attributes'
-    warnings.warn(message, UserWarning)
+    .venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:322
+    /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+    * 'orm_mode' has been renamed to 'from_attributes'
+        warnings.warn(message, UserWarning)
 
-.venv/lib/python3.12/site-packages/httpx/_client.py:680
-  /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/httpx/_client.py:680: DeprecationWarning: The 'app' shortcut is now deprecated. Use the explicit style 'transport=WSGITransport(app=...)' instead.
-    warnings.warn(message, DeprecationWarning)
+    .venv/lib/python3.12/site-packages/httpx/_client.py:680
+    /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/httpx/_client.py:680: DeprecationWarning: The 'app' shortcut is now deprecated. Use the explicit style 'transport=WSGITransport(app=...)' instead.
+        warnings.warn(message, DeprecationWarning)
 
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-============================================================ 8 passed, 3 warnings in 1.08s ==================
+    -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+    ============================================================ 8 passed, 3 warnings in 1.08s ==================
 
 ```
 
 ### Pytest Coverage Report
 
-```
-pytest --cov
-================================================================= test session starts =================================================================
-platform linux -- Python 3.12.1, pytest-8.1.1, pluggy-1.4.0
-rootdir: /home/david/Recipe_Management
-configfile: pyproject.toml
-plugins: cov-5.0.0, anyio-4.3.0
-collected 8 items                                                                                                                                     
+"""
+    ❯ pytest --cov
+    ================================================================= test session starts =================================================================
+    platform linux -- Python 3.12.1, pytest-8.1.1, pluggy-1.4.0
+    rootdir: /home/david/Recipe_Management
+    configfile: pyproject.toml
+    plugins: cov-5.0.0, anyio-4.3.0
+    collected 8 items                                                                                                                                     
 
-test_main.py ........                                                                                                                           [100%]
+    test_main.py ........                                                                                                                           [100%]
 
-================================================================== warnings summary ===================================================================
-.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:272
-  /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:272: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.6/migration/
-    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+    ================================================================== 
 
-.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:322
-  /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
-  * 'orm_mode' has been renamed to 'from_attributes'
-    warnings.warn(message, UserWarning)
+    ---------- coverage: platform linux, python 3.12.1-final-0 -----------
+    Name           Stmts   Miss  Cover
+    ----------------------------------
+    main.py           28      0   100%
+    model.py          17      0   100%
+    service.py        48      6    88%
+    test_main.py      35      0   100%
+    ----------------------------------
+    TOTAL            128      6    95%
 
-.venv/lib/python3.12/site-packages/httpx/_client.py:680
-  /home/david/Recipe
-
-_Management/.venv/lib/python3.12/site-packages/httpx/_client.py:680: DeprecationWarning: The 'app' shortcut is now deprecated. Use the explicit style 'transport=WSGITransport(app=...)' instead.
-    warnings.warn(message, DeprecationWarning)
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-============================================================ 8 passed, 3 warnings in 3.16s 
-
-
-```
+    ============================================================ 8 passed, 3 warnings in 3.16s 
+"""
 
 ## License
 
