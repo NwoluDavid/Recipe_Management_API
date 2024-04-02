@@ -11,7 +11,7 @@ from service import (
 app = FastAPI()
 
 
-@app.get("/recipes/", response_model= Recipe)
+@app.get("/recipes/", response_model=list[Recipe])
 def read_recipes():
     return get_recipes()
 
@@ -37,9 +37,9 @@ def update_existing_recipe(title: str, recipe: Recipe):
     return updated_recipe
 
 
-@app.delete("/recipes/{title}", response_model=Recipe)
+@app.delete("/recipes/{title}")
 def delete_existing_recipe(title: str):
     deleted_recipe = delete_recipe(title)
     if deleted_recipe is None:
         raise HTTPException(status_code=404, detail="Recipe not found")
-    return deleted_recipe
+    return {"message": "Recipe deleted successfully"}
