@@ -1,7 +1,3 @@
-Below is a suggested README.md file content for your FastAPI app, "Recipe Management":
-
----
-
 # Recipe Management API
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -25,8 +21,8 @@ To install and run the Recipe Management API locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/NwoluDavid/Recipe_Management_API
+   cd https://github.com/NwoluDavid/Recipe_Management_API
    ```
 
 2. Install dependencies:
@@ -84,10 +80,80 @@ curl -X PUT -H "Content-Type: application/json" -d '{"title": "New Recipe", "des
 curl -X DELETE http://localhost:8000/recipes/New%20Recipe
 ```
 
+## Test Reports
+
+### Pytest Report
+
+```
+pytest test_main.py
+================================================================= test session starts =================================================================
+platform linux -- Python 3.12.1, pytest-8.1.1, pluggy-1.4.0
+rootdir: /home/david/Recipe_Management
+configfile: pyproject.toml
+plugins: cov-5.0.0, anyio-4.3.0
+collected 8 items                                                                                                                                     
+
+test_main.py ........                                                                                                                           [100%]
+
+================================================================== warnings summary ===================================================================
+.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:272
+  /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:272: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.6/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:322
+  /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+  * 'orm_mode' has been renamed to 'from_attributes'
+    warnings.warn(message, UserWarning)
+
+.venv/lib/python3.12/site-packages/httpx/_client.py:680
+  /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/httpx/_client.py:680: DeprecationWarning: The 'app' shortcut is now deprecated. Use the explicit style 'transport=WSGITransport(app=...)' instead.
+    warnings.warn(message, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================================================ 8 passed, 3 warnings in 1.08s ==================
+
+```
+
+### Pytest Coverage Report
+
+```
+pytest --cov
+================================================================= test session starts =================================================================
+platform linux -- Python 3.12.1, pytest-8.1.1, pluggy-1.4.0
+rootdir: /home/david/Recipe_Management
+configfile: pyproject.toml
+plugins: cov-5.0.0, anyio-4.3.0
+collected 8 items                                                                                                                                     
+
+test_main.py ........                                                                                                                           [100%]
+
+================================================================== warnings summary ===================================================================
+.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:272
+  /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:272: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.6/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:322
+  /home/david/Recipe_Management/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+  * 'orm_mode' has been renamed to 'from_attributes'
+    warnings.warn(message, UserWarning)
+
+.venv/lib/python3.12/site-packages/httpx/_client.py:680
+  /home/david/Recipe
+
+_Management/.venv/lib/python3.12/site-packages/httpx/_client.py:680: DeprecationWarning: The 'app' shortcut is now deprecated. Use the explicit style 'transport=WSGITransport(app=...)' instead.
+    warnings.warn(message, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================================================ 8 passed, 3 warnings in 3.16s 
+
+
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+
 
 🎉 Congratulations on discovering the Recipe Management API! 🍽️ Whether you're a cooking enthusiast or a developer looking to streamline recipe management, you're in for a treat! Enjoy exploring the features and creating delicious recipes with ease. Cheers to culinary adventures ahead! 🥳
