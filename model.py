@@ -22,3 +22,8 @@ class Recipe(BaseModel):
 
     class Config:
         orm_mode = True
+        
+class Responses ( BaseModel):
+    status_code: int
+    data: dict
+    message: str
