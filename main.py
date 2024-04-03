@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from model import Recipe
+from fastapi.responses import JSONResponse
+from model import Recipe, Responses
 from service import (
     get_recipes,
     get_recipe_by_title,
@@ -24,9 +25,11 @@ def read_recipe(title: str):
     return recipe
 
 
-@app.post("/recipes/", response_model=Recipe)
+@app.post("/recipes/", response_model=Responses)
 def create_new_recipe(recipe: Recipe):
-    return create_recipe(recipe)
+    results = create_recipe(recipe).model_dump()
+    return JSONResponse (status_code = 201, content ={"data":results, "message": "Recipe created successfully"})
+
 
 
 @app.put("/recipes/{title}", response_model=Recipe)
